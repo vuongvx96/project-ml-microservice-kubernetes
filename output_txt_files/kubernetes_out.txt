@@ -3,16 +3,23 @@ NAME                        READY   STATUS              RESTARTS   AGE
 housing-price-predication   0/1     ContainerCreating   0          0s
 error: unable to forward port because pod is not running. Current status=Pending
 
-vuongvx@LEONARD:~/DevOps_Microservices/project-ml-microservice-kubernetes$ ./run_kubernetes.sh 
+vuongvx@LEONARD:~/DevOps_Microservices/project-ml-microservice-kubernetes$ ./run_kubernetes.sh
 Error from server (AlreadyExists): pods "housing-price-predication" already exists
-NAME                        READY   STATUS    RESTARTS   AGE
-housing-price-predication   1/1     Running   0          9m10s
+NAME                        READY   STATUS    RESTARTS      AGE
+housing-price-predication   1/1     Running   1 (17h ago)   17h
 Forwarding from 0.0.0.0:8000 -> 80
 Handling connection for 8000
-Handling connection for 8000
-Handling connection for 8000
-Handling connection for 8000
-Handling connection for 8000
-Handling connection for 8000
-Handling connection for 8000
+
+vuongvx@LEONARD:~/project-ml-microservice-kubernetes$ ./make_prediction.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
+Error from server (AlreadyExists): pods "housing-price-predication" already exists
+NAME                        READY   STATUS    RESTARTS      AGE
+housing-price-predication   1/1     Running   1 (17h ago)   17h
+Forwarding from 0.0.0.0:8000 -> 80
 Handling connection for 8000
